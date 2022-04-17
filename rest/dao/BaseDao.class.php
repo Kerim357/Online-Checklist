@@ -21,13 +21,13 @@ class BaseDao{
   * Method used to read all todo objects from database
   */
   public function get_all(){
-    $stmt = $this->conn->prepare("SELECT * FROM todos");
+    $stmt = $this->conn->prepare("SELECT * FROM User");
     $stmt->execute();
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
   }
 
   public function get_by_id($id){
-    $stmt = $this->conn->prepare("SELECT * FROM todos WHERE id = :id");
+    $stmt = $this->conn->prepare("SELECT * FROM User WHERE userId = :id");
     $stmt->execute(['id' => $id]);
     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
     return reset($result);
@@ -36,10 +36,10 @@ class BaseDao{
   /**
   * Method used to add todo to the database
   */
-  public function add($todo){
-    $stmt = $this->conn->prepare("INSERT INTO todos (description, created) VALUES (:description, :created)");
-    $stmt->execute($todo);
-    $todo['id'] = $this->conn->lastInsertId();
+  public function add($User){
+    $stmt = $this->conn->prepare("INSERT INTO User (name,password,title) VALUES (:name, :password,:title)");
+    $stmt->execute($User);
+    $User['id'] = $this->conn->lastInsertId();
     return $todo;
   }
 
@@ -47,7 +47,7 @@ class BaseDao{
   * Delete todo record from the database
   */
   public function delete($id){
-    $stmt = $this->conn->prepare("DELETE FROM todos WHERE id=:id");
+    $stmt = $this->conn->prepare("DELETE FROM User WHERE userId=:id");
     $stmt->bindParam(':id', $id); // SQL injection prevention
     $stmt->execute();
   }
@@ -55,10 +55,10 @@ class BaseDao{
   /**
   * Update todo record
   */
-  public function update($todo){
-    $stmt = $this->conn->prepare("UPDATE todos SET description=:description, created=:created WHERE id=:id");
-    $stmt->execute($todo);
-    return $todo;
+  public function update($User){
+    $stmt = $this->conn->prepare("UPDATE User SET name=:name, title=:title WHERE userId=:id");
+    $stmt->execute($User);
+    return $User;
   }
 
 }
