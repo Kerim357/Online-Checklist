@@ -1,0 +1,131 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: roboto;
+}
+
+body {
+	background: #f2f2f2;
+	overflow: auto;
+  font-family: roboto;
+}
+
+h1{
+	text-align: center;
+	margin: 5%;
+	font-size: 3rem;
+  font-weight: 500;
+  font-family: roboto;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #E4E7EC;
+}
+h1.row {
+  margin-top: 50px;
+}
+ul {
+	text-align: left;
+	padding-left: 10%;
+	padding: 7%;
+	font-size: 2rem;
+	list-style: circle;
+}
+li {
+  padding-right: 20px;
+  list-style: none;
+  font-family: roboto;
+  font-size: 18px;
+  width: 250px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+li:hover{
+  text-decoration: none;
+	color:blue;
+	transition: 1.5s ease;
+	cursor: pointer;
+}
+
+.form-group {
+  margin-left: 20px;
+}
+
+.form-inline {
+  display: flex;
+  margin-top: 20px;
+}
+
+.list-element {
+  width: 100%;
+  max-width: 750px;
+  height: 48px;
+  border-top: 1px solid #E4E7EC;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.row {
+  width: 100%;
+  max-width: 750px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.list-element:last-child {
+  border-bottom: 1px solid #E4E7EC;
+}
+
+.delete-icon {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  border-radius: 8px;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.delete-icon:hover {
+  background-color: #d4d3d3;
+}
+
+.delete-icon-content {
+  width: 18px;
+  height: 18px;
+  font-size: 20px;
+  margin: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#statuses {
+  height: 40px;
+  width: 170px;
+  padding-left: 20px;
+  padding-right: 10px;
+  border-radius: 8px;
+  font-family: roboto;
+  font-size: 18px;
+  border: 1px #d4d3d3 solid
+}
+
+.color-icon {
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  font-size: 25px;
+  margin: 0px;
+  margin-left: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: blue;
+}
