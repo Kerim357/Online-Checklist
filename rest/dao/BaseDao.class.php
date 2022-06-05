@@ -9,9 +9,9 @@ class BaseDao{
   */
   public function __construct(){
     $servername = "localhost";
-    $username = "freedb_Kerim357";
-    $password = "JndTK8xruWayYD#";
-    $schema = "freedb_onlinechecklist";
+    $username = "root";
+    $password = "root";
+    $schema = "online-checklisttest";
     $this->conn = new PDO("mysql:host=$servername;dbname=$schema", $username, $password);
     // set the PDO error mode to exception
     $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
